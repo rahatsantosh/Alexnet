@@ -36,9 +36,6 @@ class Alexnet(nn.Module):
         
         self.fc3 = nn.Linear(in_features=4096, out_features=100, bias=True)
     
-    def get_indices(self):
-        return self.indices1, self.indices2
-    
     def forward(self, x):
         x = self.cnn1(x)
         x = torch.relu(x)
